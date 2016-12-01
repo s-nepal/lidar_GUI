@@ -190,7 +190,9 @@ void PCLViewer::on_pauseButton_clicked()
 void PCLViewer::on_recordButton_clicked()
 {
     fromLidarOne = new RecordPcapData(this);
+    fromLidarOne -> flag = 1;
     fromLidarTwo = new RecordPcapData(this);
+    fromLidarTwo -> flag = 2;
     fromLidarOne->record = true;
     fromLidarTwo->record = true;
     fromLidarOne->fileName = "Lidar_1.pcap";
@@ -224,7 +226,7 @@ void PCLViewer::on_stopButton_clicked()
     }
 
     QDateTime dateTime = QDateTime::currentDateTime();
-    QString command = dateTime.toString("yyMMdd_hhmmss'.tar.gz'");                    //to generate the filename based on time
+    QString command = dateTime.toString("yyyyMMdd_hhmmss'.tar.gz'");                    //to generate the filename based on time
     qDebug() << command;
     command = QString("tar -czvf %1 Lidar_1.pcap Lidar_2.pcap out.avi").arg(command);
     qDebug() << command;

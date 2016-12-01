@@ -17,6 +17,7 @@ public:
     QString fileName;
     pcap_t *descr;
     pcap_dumper_t *pd;
+    int flag;
 private:
 
 };

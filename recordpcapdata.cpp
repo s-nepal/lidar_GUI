@@ -15,7 +15,11 @@ void RecordPcapData::run()
     ba = portName.toLatin1();
     port = ba.data();
 
-    descr = pcap_open_live(port, 1248, 1, 1, errbuf);
+    if(flag == 1) // for the velodyne LiDAR
+        descr = pcap_open_live(port, 1248, 1, 1, errbuf);
+    else // for the other LiDAR
+        descr = pcap_open_live(port, 1498, 1, 1, errbuf);
+
     if(descr == NULL){
         qDebug() << "pcap_open_live failed: " << errbuf;
         return;

@@ -5,6 +5,7 @@
 
 const int cycle_num = 50;
 const int delay_us = 50000;
+const int num_bytes = 1248; // number of bytes per UDP packet
 
 PointCloudTPtr extract_xyz_I(struct data_packet& processed_packet, PointCloudTPtr cloud);
 

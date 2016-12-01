@@ -3,8 +3,9 @@
 
 #include "common.h"
 
-const int cycle_num1 = 50;
+const int cycle_num1 = 200;
 const int delay_us1 = 50000;
+const int num_bytes1 = 1498; // number of bytes per UDP packet
 
 PointCloudTPtr extract_xyz_II(struct data_packet_II& processed_packet, PointCloudTPtr cloud);
 

@@ -30,7 +30,7 @@ void LidarTwo::run()
         QByteArray ba;
         ba = portName.toLatin1();
         port = ba.data();
-        descr1 = pcap_open_live(port, 1248, 1, 1, errbuf);
+        descr1 = pcap_open_live(port, num_bytes1, 1, 1, errbuf);
     }
     if (descr1 == NULL) {
       cout << "pcap_open_live() failed: " << errbuf << endl;
@@ -59,33 +59,6 @@ void LidarTwo::run()
 
 PointCloudTPtr extract_xyz_II(struct data_packet_II& processed_packet, PointCloudTPtr cloud)
 {
-//    pcl::PointXYZRGBA sample;
-
-//    for(int i = 0; i < 12; i++){
-//        double curr_azimuth = (processed_packet.payload[i].azimuth) * PI / 180; //convert degrees to radians
-//        for(int j = 0; j < 32; j++){
-//            double curr_dist = processed_packet.payload[i].dist[j];
-//            double curr_intensity = processed_packet.payload[i].intensity[j];
-//            double curr_elev_angle = (elev_angles[j]) * PI / 180;
-//            sample.x = curr_dist * sin(curr_azimuth);
-//            sample.y = curr_dist * cos(curr_azimuth);
-//            sample.z = curr_dist * sin(curr_elev_angle);
-//            //call function to colorize the point cloud
-//            colorize_point_cloud(curr_intensity, &sample);
-//            cloud -> points.push_back(sample);
-//        }
-//    }
-
-//    if(global_ctr1 > cycle_num1){
-//        cloud -> points.clear();
-//        global_ctr1 = 0;
-//        //usleep(400000); //0.1s delay
-//    }
-//    global_ctr1++;
-
-//    return cloud;
-
-    //static pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGBA>);
     pcl::PointXYZRGBA sample;
 
     double curr_azimuth, curr_elevation, curr_distance, curr_intensity;

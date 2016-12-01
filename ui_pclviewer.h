@@ -133,7 +133,7 @@ public:
         playButton->setFont(font2);
         portName = new QLineEdit(centralwidget);
         portName->setObjectName(QString::fromUtf8("portName"));
-        portName->setGeometry(QRect(710, 670, 101, 21));
+        portName->setGeometry(QRect(700, 630, 101, 21));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(660, 670, 71, 16));
@@ -142,7 +142,7 @@ public:
         label_2->setGeometry(QRect(660, 630, 71, 16));
         portName_2 = new QLineEdit(centralwidget);
         portName_2->setObjectName(QString::fromUtf8("portName_2"));
-        portName_2->setGeometry(QRect(710, 630, 101, 21));
+        portName_2->setGeometry(QRect(700, 670, 101, 21));
         stopButton = new QPushButton(centralwidget);
         stopButton->setObjectName(QString::fromUtf8("stopButton"));
         stopButton->setGeometry(QRect(1040, 490, 80, 23));

@@ -207,8 +207,8 @@
    <widget class="QLineEdit" name="portName">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>670</y>
+      <x>700</x>
+      <y>630</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -246,8 +246,8 @@
    <widget class="QLineEdit" name="portName_2">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>630</y>
+      <x>700</x>
+      <y>670</y>
       <width>101</width>
       <height>21</height>
      </rect>
